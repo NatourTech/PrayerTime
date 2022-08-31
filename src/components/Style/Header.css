@@ -1,0 +1,136 @@
+/*
+   #8A8A8A UP UP
+   #5C5C5C UP
+   #2E2E2E Down
+
+
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  height: 88vh;
+  background-image: linear-gradient(
+      45deg,
+      rgba(217, 221, 224, 0.6),
+      rgba(0, 0, 0, 0.9)
+    ),
+    url(../img/andalus.jpg);
+  clip-path: polygon(0 0, 100% 0, 100% 70vh, 0 100%);
+  /*vary useFull*/
+  background-size: cover;
+  background-position: top;
+  position: relative;
+}
+
+.logo-box {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+}
+
+.logo {
+  height: 35px;
+  animation: logoAnimation;
+  animation-duration: 0.8s;
+  animation-timing-function: ease-out;
+}
+
+.logo:hover {
+  transform: translateY(-3px);
+}
+
+.clock-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+}
+
+@keyframes logoAnimation {
+  0% {
+    opacity: 0;
+    transform: rotate(45deg);
+  }
+
+  80% {
+    transform: rotate(-20deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+}
+
+.clock-box {
+  position: absolute;
+  top: 35%;
+  left: 35%;
+  color: #fff;
+  animation: moveInleft 3s ease-out;
+  animation-fill-mode: backwards;
+}
+
+.clock-box-h {
+  letter-spacing: 14px;
+  font-weight: 600;
+  display: block;
+  font-size: 58px;
+}
+
+@keyframes moveInleft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  80% {
+    transform: translateX(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.date-Box {
+  position: absolute;
+  top: 45%;
+  left: 40%;
+  color: #fff;
+  display: block;
+}
+
+.hijri-Date {
+  word-spacing: 10px;
+}
+
+.el {
+  padding: 4px;
+}
+
+.prayer-Box {
+  color: #fff;
+  position: absolute;
+  left: 30%;
+  top: 55%;
+}
+
+.prayer-list {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none !important;
+}
+
+li {
+  padding: 15px;
+  border-bottom: 1px solid rgb(159, 196, 196);
+  border-bottom-width: 2px;
+
+  margin: 8px;
+  list-style-position: inside;
+}
