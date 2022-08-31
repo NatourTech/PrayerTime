@@ -1,70 +1,113 @@
-# Getting Started with Create React App
+# [Islamic Prayer Times](https://m-hafez22.github.io/islamic-prayer-times/)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![Mozilla Add-on](https://img.shields.io/amo/users/islamic-prayer-times?style=social&logo=firefox)](https://addons.mozilla.org/en-US/firefox/addon/islamic-prayer-times/)
+[![Mozilla Add-on](https://img.shields.io/amo/dw/islamic-prayer-times?style=social&logo=firefox)](https://addons.mozilla.org/en-US/firefox/addon/islamic-prayer-times/)
+[![Mozilla Add-on](https://img.shields.io/amo/stars/islamic-prayer-times?style=falt&logo=firefox)](https://addons.mozilla.org/en-US/firefox/addon/islamic-prayer-times/)
 
-## Available Scripts
+[![Docker](https://img.shields.io/badge/-Docker_Image-2497EC?style=for-the-badge&logoColor=fff&logo=docker)](https://hub.docker.com/r/mohamedhafez/islamic_prayer_times)
 
-In the project directory, you can run:
+A web Application that provides You with **Hijri Date**, **Prayer Times**, and **The Remaining Time to the next prayer** depending on your time zone.
 
-### `npm start`
+Go to [Islamic Prayer Times](https://m-hafez22.github.io/islamic-prayer-times/)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![App preview](https://pbs.twimg.com/media/Fbff2VwXkAQ4knt?format=jpg&name=large)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Table of Contents
 
-### `npm test`
+- [General info](#general-info)
+- [Features](#features)
+- [Clone](#clone)
+- [Extension](#extension)
+- [Inspiration](#inspiration)
+- [License](#license)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## General info
 
-### `npm run build`
+Islamic Prayer Times is a web app that uses **[AlAdhan.com](https://aladhan.com/prayer-times-api)** API to provide the user with **Hijri date**, **Prayers times**;
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Features
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Current time ( in 12 formats)
+2. Hijri Date
+3. The prayers times for one day
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Location
+  - let the app detect your location to present prayer times for your Time zone.
+  - If you block location detecting it will present Loading data for the default location .
+  
+         press Allow
+  
+  - To check the used time zone *press the gear icon on the bottom right* corner The time zone will be displayed at the bottom of the app
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Clone
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+To clone and run this application, you'll need Git and npm (which comes with Node.js) installed on your computer.
+From your command line:
 
-## Learn More
+1. Clone this repository
+  `git clone https://github.com/NatourTech/PrayerTime.git`
+2. Go into the repository
+  `cd islamic-prayer-times`
+3. Install dependencies
+  `npm install`
+4. Run the app
+  `npm start`
+5. when it opens in your browser it will ask for detecting your location choose *Allow*
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Extension
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Build for firefox
 
-### Analyzing the Bundle Size
+- Open [package.json](./package.json) and make sure that **homepage** set to **.** the current directory
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+  ```json
+  "homepage": "."
+  ```
 
-### Making a Progressive Web App
+- Open [manifest.json](./public/manifest.json) in the public directory and make sure that **manifest_version** is set to **2**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+  ```json
+  "manifest_version": 2,
+  ```
 
-### Advanced Configuration
+- Now run buildextension script
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+  ```bash
+  npm run buildextension
+  ```
 
-### Deployment
+### Build for Chrome
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- Open [package.json](./package.json) and make sure that **homepage** set to **.** the current directory
 
-### `npm run build` fails to minify
+  ```json
+  "homepage": "."
+  ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Open [manifest.json](./public/manifest.json) in the public directory and make sure that **manifest_version** is set to **3**
+
+  ```json
+  "manifest_version": 3,
+  ```
+
+- Now run buildextension script
+
+  ```bash
+  npm run buildextension
+  ```
+
+## Inspiration
+
+- This project was inspired by a chrome extension called **[Islamway Ramadan | طريق الإسلام](https://chrome.google.com/webstore/detail/islamway-ramadan-%D8%B7%D8%B1%D9%8A%D9%82-%D8%A7%D9%84%D8%A5/mcbgkoikidgnmbekipnnhhhjhcaioflb)** which is powered by **[Islamway](https://ar.islamway.net/)** website.
+
+## License
+
+[![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
+
+- Licensed under the **[MIT license](LICENSE)**
+- Copyright (c) 2022 Mohamed Natour
