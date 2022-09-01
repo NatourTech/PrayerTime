@@ -50,7 +50,7 @@ From your command line:
 1. Clone this repository
   `git clone https://github.com/NatourTech/PrayerTime.git`
 2. Go into the repository
-  `cd islamic-prayer-times`
+  `cd ipt`
 3. Install dependencies
   `npm install`
 4. Run the app
